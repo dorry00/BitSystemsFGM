@@ -1,0 +1,75 @@
+.datatable{
+    height:75vh;
+    width:100%;
+}
+.container2{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    top: 0 !important;
+    border: 2px solid grey;
+}
+
+.modal{
+    display: flex;
+    top: 0;
+    justify-content: center;
+    width: 80vh;
+    border: 4px;
+    border-color: red;
+   
+}
+
+.dashboard-message{
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+.message-container{
+    height: 70vh;
+    padding:10px;
+    margin-top: 20px;
+    border: solid 1px grey;
+    border-radius: 10px;
+    border-color: rgb(214, 214, 214);
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+   
+
+}
+.message-from{
+    display: flex;
+    margin-left: 20px;
+   
+}
+ .p1{
+    color:rgb(209, 204, 204);
+}
+.p2{
+    color:black;
+    margin-left: 20px;
+}
+.p3{
+    color:black;
+    margin-left: 5px;
+}
+.header{
+    color:black;
+    margin-top: 20px;
+}
+.p-message{
+    color:black;
+    margin: 20px ;
+}
+.message-button{
+    margin-left: 20px;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 20px;
+    color: white;
+    background-color: teal;
+    border: none;
+}
+
+
