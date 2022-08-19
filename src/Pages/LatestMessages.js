@@ -1,3 +1,4 @@
+import React,{useState, useEffect} from 'react'
 import { format } from 'date-fns';
 import { v4 as uuid } from 'uuid';
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -16,72 +17,27 @@ import {
 } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { SeverityPill } from "../Components/Severitypill"
+import axios from "axios"
 
-const orders = [
-  {
-    id: uuid(),
-    ref: 'CDD1049',
-    amount: 30.5,
-    customer: {
-      name: 'Message 5'
-    },
-    createdAt: 1555016400000,
-    status: 'pending'
-  },
-  {
-    id: uuid(),
-    ref: 'CDD1048',
-    amount: 25.1,
-    customer: {
-      name: 'Message 3'
-    },
-    createdAt: 1555016400000,
-    status: 'resolved'
-  },
-  {
-    id: uuid(),
-    ref: 'FGM1047',
-    amount: 10.99,
-    customer: {
-      name: 'message 2'
-    },
-    createdAt: 1554930000000,
-    status: 'pending'
-  },
-  {
-    id: uuid(),
-    ref: 'FGM1046',
-    amount: 96.43,
-    customer: {
-      name: 'message 1'
-    },
-    createdAt: 1554757200000,
-    status: 'pending'
-  },
-  {
-    id: uuid(),
-    ref: 'FGM1045',
-    amount: 32.54,
-    customer: {
-      name: 'message 6'
-    },
-    createdAt: 1554670800000,
-    status: 'resolved'
-  },
-  {
-    id: uuid(),
-    ref: 'FGM1044',
-    amount: 16.76,
-    customer: {
-      name: 'Message 7'
-    },
-    createdAt: 1554670800000,
-    status: 'resolved'
-  }
-];
+function LatestOrders(props) {
+        const [messages, setMessages] = useState([]);
+   
+    const fetchMessages = async () => {
+      const result = await axios.get("http://localhost/getAllMessages.php");
+      setMessages(result.data.result);
+      
+     
+    };
+  
+    useEffect(() => {
+      fetchMessages();
+      console.log(messages)
+     
+    }, [messages]);
 
-export const LatestOrders = (props) => (
-  <Card {...props}>
+    
+  return (
+     <Card {...props}>
     <CardHeader title="Messages" />
     <PerfectScrollbar>
       <Box sx={{ minWidth: 1000 }}>
@@ -112,28 +68,28 @@ export const LatestOrders = (props) => (
             </TableRow>
           </TableHead>
           <TableBody>
-            {orders.map((order) => (
+            {messages.map((order) => (
               <TableRow
                 hover
-                key={order.id}
+                key={order.msg_id}
               >
                 <TableCell>
-                  {order.ref}
+                  {order.msg_id}
                 </TableCell>
                 <TableCell>
-                  {order.customer.name}
+                  {order.sender_name}
                 </TableCell>
                 <TableCell>
-                  {format(order.createdAt, 'dd/MM/yyyy')}
+                  {order.message}
                 </TableCell>
                 <TableCell>
-                  <SeverityPill
+                  {/* <SeverityPill
                     color={(order.status === 'resolved' && 'success')
                     || (order.status === 'pending' && 'error')
                     || 'warning'}
                   >
                     {order.status}
-                  </SeverityPill>
+                    </SeverityPill> */}
                 </TableCell>
               </TableRow>
             ))}
@@ -158,4 +114,12 @@ export const LatestOrders = (props) => (
       </Button>
     </Box>
   </Card>
-);
+  )
+}
+
+export default LatestOrders
+
+
+
+
+

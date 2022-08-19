@@ -6,7 +6,7 @@ import { DashboardSidebar } from "../Components/DashboardLayout/DashboardSidebar
 import { DashboardNavbar } from "../Components/DashboardLayout/DashboardNavbar.js";
 import { AdminNavbar } from "../Components/AdminUsers/AdminNavbar.js";
 import { styled } from "@mui/material/styles";
-import {LatestOrders}  from "./LatestMessages.js";
+import LatestOrders  from "./LatestMessages.js";
 const DashboardLayoutRoot = styled("div")(({ theme }) => ({
   display: "flex",
   flex: "1 1 auto",
