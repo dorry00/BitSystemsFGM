@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
-import { v4 as uuid } from "uuid";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import {
   Box,
@@ -29,7 +28,7 @@ function LatestOrders(props) {
   useEffect(() => {
     fetchMessages();
     console.log(messages);
-  }, [messages]);
+  }, []);
 
   return (
     <Card {...props}>

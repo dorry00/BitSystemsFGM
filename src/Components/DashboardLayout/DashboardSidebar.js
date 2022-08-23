@@ -1,17 +1,11 @@
 import { useEffect } from 'react';
-import NextLink from 'next/link';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
+import { Box, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import LockIcon from '@mui/icons-material/Lock';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import GroupIcon from '@mui/icons-material/Group';
 import PersonIcon from '@mui/icons-material/Person';
-import CancelIcon from '@mui/icons-material/Cancel';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import { NavItem } from '../nav-item';
 

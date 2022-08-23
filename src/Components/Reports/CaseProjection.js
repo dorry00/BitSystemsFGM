@@ -22,12 +22,12 @@ const CaseProjection = (props) => (
             >
               Cases Projection
             </Typography>
-            <Typography
+            {/* <Typography
               color="textPrimary"
               variant="h4"
             >
               19%
-            </Typography>
+            </Typography> */}
           </Grid>
           <Grid item>
             <Avatar

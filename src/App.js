@@ -1,9 +1,6 @@
 import SignUp from "./Components/SignUp/SignUp";
 import Dashboard from "./Pages/Dashboard";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Home/Navbar";
-import Footer from "./Components/Footer/Footer";
 import { AdminUsers } from "./Components/AdminUsers/AdminUsers";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/index";
@@ -13,6 +10,10 @@ import AddUser from "./Pages/AddUser";
 import UpdateUser from "./Pages/UpdateUser"
 import Messages from "./Pages/Messages";
 import MapVisualization from "./Pages/MapVisualization";
+// import {TotalCases} from "../../my-app/src/Components/Reports/TotalCases"
+import CasesTrend from "./Components/Reports/CasesTrend";
+// import MostAffectedArea from "./Components/Reports/MostAffectedArea";
+import ResolvedCases from "./Components/Reports/ResolvedCases";
 
 function App() {
   return (

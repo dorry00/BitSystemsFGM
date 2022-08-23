@@ -1,22 +1,14 @@
-import Head from 'next/head';
 import { Box, Container, Grid } from '@mui/material';
-import CaseProjection from '../../src/Components/Reports/CaseProjection';
-// import LatestCases from '../Dashboard/LatestCases';
-// import TrendingCases from '../Dashboard/TrendingCases';
-import CasesTrend from "../../src/Components/Reports/CasesTrend";
-import ResolvedCases from "../../src/Components/Reports/ResolvedCases";
-import TotalCases from '../src/Components/Reports/TotalCases';
-import MostAffectedArea from '../../src/Components/Reports/MostAffectedArea';
-import DashboardLayout from '../Home/DashboardLayout';
-import CasesCategories from "../../src/Components/Reports/CasesCategories";
+import CaseProjection from '../Components/Reports/CaseProjection';
+import CasesTrend from "../Components/Reports/CasesTrend";
+import ResolvedCases from '../Components/Reports/ResolvedCases';
+import TotalCases from "../Components/Reports/TotalCases";
+import MostAffectedArea from '../Components/Reports/MostAffectedArea';
+import CasesCategories from "../Components/Reports/CasesCategories";
 
 const Dashboard = () => (
     <div >
-      <Head>
-        <title>
-          Dashboard | Gender Base
-        </title>
-      </Head>
+    
       <Box
         component="main"
         sx={{
@@ -108,11 +100,7 @@ const Dashboard = () => (
     </div>
   );
   
-  Dashboard.getLayout = (page) => (
-    <DashboardLayout>
-      {page}
-    </DashboardLayout>
-  );
+
   
   export default Dashboard;
   
