@@ -8,7 +8,7 @@ export const LoginCall = async (userDetails, dispatch) => {
     const error = true
     res.data.status &&  dispatch({ type: "LOGIN_FAILURE", payload: error });
     
-    res.data.user_name && window.location.replace("http://localhost:3000/dashboard");
+    res.data.user_name && window.location.replace("http://localhost:3000/messages");
   } catch (error) {
 
  

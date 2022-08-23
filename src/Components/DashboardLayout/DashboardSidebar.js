@@ -33,9 +33,9 @@ const items = [
     title: 'Messages'
   },
   {
-    href: '/account',
+    href: '/adduser',
     icon: (<PersonIcon fontSize="small" />),
-    title: 'Account'
+    title: 'Add users'
   },
   {
     href: '/settings',
@@ -43,16 +43,10 @@ const items = [
     title: 'Settings'
   },
   {
-    href: '/login',
+    href: '/reports',
     icon: (<LockIcon fontSize="small" />),
     title: 'Login'
   },
-  
-  {
-    href: '/404',
-    icon: (<CancelIcon fontSize="small" />),
-    title: 'Error'
-  }
 ];
 
 export const DashboardSidebar = (props) => {

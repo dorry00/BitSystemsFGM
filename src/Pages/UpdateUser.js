@@ -1,14 +1,9 @@
 import React from 'react'
-
 import { Box, Container, Grid, Typography } from '@mui/material';
-import {UserForm} from "../Components/AddUsers/UserForm"
 import { UpdateUserForm } from '../Components/UpdateUser/UpdateUser';
-// import { DashboardLayout } from '../components/dashboard-layout';
 import { styled } from "@mui/material/styles";
-
 import { DashboardSidebar } from "../Components/DashboardLayout/DashboardSidebar.js";
 import { DashboardNavbar } from "../Components/DashboardLayout/DashboardNavbar.js";
-
 
 const DashboardLayoutRoot = styled("div")(({ theme }) => ({
   display: "flex",
@@ -60,11 +55,4 @@ const UpdateUser = () => (
     </DashboardLayoutRoot>
   </>
 );
-
-// UpdateUser.getLayout = (page) => (
-//   <DashboardLayout>
-//     {page}
-//   </DashboardLayout>
-// );
-
 export default UpdateUser;
