@@ -1,5 +1,6 @@
 import SignUp from "./Components/SignUp/SignUp";
-import Dashboard from "./Components/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Home/Navbar";
 import Footer from "./Components/Footer/Footer";
@@ -19,6 +20,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes>
+            <Route path = "/dashboard" element = {<Dashboard/>}/>
             <Route path = "/adduser" element={<AddUser />} />
             <Route path = "/messages" element = {<Messages/>}/>
             <Route path = "/login" element ={<SignUp/>}/>
