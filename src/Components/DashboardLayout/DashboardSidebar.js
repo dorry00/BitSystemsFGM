@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Box, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
@@ -8,42 +8,145 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import PersonIcon from '@mui/icons-material/Person';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import { NavItem } from '../nav-item';
+import { AuthContext } from '../../Context/AuthContext';
 
 
-const items = [
-  {
-    href: '/',
-    icon: (<InsertChartIcon fontSize="small" />),
-    title: 'Dashboard'
-  },
-  {
-    href: "/users",
-    icon: (<PersonIcon fontSize="small" />),
-    title: 'Users'
-  },
-  {
-    href: '/messages',
-    icon: (<ShoppingBagIcon fontSize="small" />),
-    title: 'Messages'
-  },
-  {
-    href: '/adduser',
-    icon: (<PersonIcon fontSize="small" />),
-    title: 'Add users'
-  },
-  {
-    href: '/settings',
-    icon: (<PsychologyIcon fontSize="small" />),
-    title: 'Settings'
-  },
-  {
-    href: '/reports',
-    icon: (<LockIcon fontSize="small" />),
-    title: 'Login'
-  },
-];
+
 
 export const DashboardSidebar = (props) => {
+  let items = []
+
+  const {user} = useContext(AuthContext)
+
+  if (user.user_type === "0"){
+
+     items = [
+      {
+        href: '/dashboard',
+        icon: (<InsertChartIcon fontSize="small" />),
+        title: 'Dashboard'
+      },
+      {
+        href: "/users",
+        icon: (<PersonIcon fontSize="small" />),
+        title: 'Users'
+      },
+      {
+        href: '/messages',
+        icon: (<ShoppingBagIcon fontSize="small" />),
+        title: 'Messages'
+      },
+      {
+        href: '/adduser',
+        icon: (<PersonIcon fontSize="small" />),
+        title: 'Add users'
+      },
+      {
+        href: '/settings',
+        icon: (<PsychologyIcon fontSize="small" />),
+        title: 'Settings'
+      },
+      {
+        href: '/reports',
+        icon: (<LockIcon fontSize="small" />),
+        title: 'Reports'
+      },
+      {
+        href: '/logout',
+        icon: (<LockIcon fontSize="small" />),
+        title: 'Logout'
+      },
+    ];
+
+  }
+
+  if (user.user_type === "1"){
+
+    items = [
+      {
+        href: '/dashboard',
+        icon: (<InsertChartIcon fontSize="small" />),
+        title: 'Dashboard'
+      },
+      {
+        href: "/users",
+        icon: (<PersonIcon fontSize="small" />),
+        title: 'Users'
+      },
+      {
+        href: '/messages',
+        icon: (<ShoppingBagIcon fontSize="small" />),
+        title: 'Messages'
+      },
+      {
+        href: '/adduser',
+        icon: (<PersonIcon fontSize="small" />),
+        title: 'Add users'
+      },
+      {
+        href: '/settings',
+        icon: (<PsychologyIcon fontSize="small" />),
+        title: 'Settings'
+      },
+      {
+        href: '/reports',
+        icon: (<LockIcon fontSize="small" />),
+        title: 'Reports'
+      },
+      {
+        href: '/logout',
+        icon: (<LockIcon fontSize="small" />),
+        title: 'Logout'
+      },
+    ];
+
+  }
+
+
+  if (user.user_type === "2"){
+
+    items = [
+      {
+        href: '/dashboard',
+        icon: (<InsertChartIcon fontSize="small" />),
+        title: 'Dashboard'
+      },
+      {
+        href: "/users",
+        icon: (<PersonIcon fontSize="small" />),
+        title: 'Users'
+      },
+      {
+        href: '/messages',
+        icon: (<ShoppingBagIcon fontSize="small" />),
+        title: 'Messages'
+      },
+      {
+        href: '/adduser',
+        icon: (<PersonIcon fontSize="small" />),
+        title: 'Add users'
+      },
+      {
+        href: '/settings',
+        icon: (<PsychologyIcon fontSize="small" />),
+        title: 'Settings'
+      },
+      {
+        href: '/reports',
+        icon: (<LockIcon fontSize="small" />),
+        title: 'Reports'
+      },
+      {
+        href: '/logout',
+        icon: (<LockIcon fontSize="small" />),
+        title: 'Logout'
+      },
+    ];
+
+  }
+
+
+
   const { open, onClose } = props;
   const router = useRouter();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'), {
@@ -75,6 +178,7 @@ export const DashboardSidebar = (props) => {
         }}
       >
         <div>
+          <p>{user.user_type}</p>
             <Box sx={{ px: 2 }}>
             <Box
               sx={{
@@ -93,7 +197,7 @@ export const DashboardSidebar = (props) => {
                   color="inherit"
                   variant="subtitle1"
                 >
-                  Bitsystems FGM
+                  User menu
                 </Typography>
                 <Typography
                   color="neutral.400"
